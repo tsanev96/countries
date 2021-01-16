@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import React, { FC } from "react";
+import ParagraphDetails from "../paragraphDetails";
 import useCardBoxStyles from "./styles";
 
 const CardBox: FC = () => {
@@ -25,15 +26,9 @@ const CardBox: FC = () => {
             Bulgaria
           </Typography>
           <Grid className={details} container direction="column">
-            <Typography>
-              <Typography component="span">Population:</Typography> 7 000 000
-            </Typography>
-            <Typography>
-              <Typography component="span">Region:</Typography> Europe
-            </Typography>
-            <Typography>
-              <Typography component="span">Capital:</Typography> Sofia
-            </Typography>
+            <ParagraphDetails title="Population" text="7 000 000" />
+            <ParagraphDetails title="Region" text="Europe" />
+            <ParagraphDetails title="Capital" text="Sofia" />
           </Grid>
         </CardContent>
       </CardActionArea>
