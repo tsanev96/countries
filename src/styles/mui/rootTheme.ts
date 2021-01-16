@@ -5,4 +5,7 @@ export const rootTheme = createMuiTheme({
     primary: { main: "#FF0000" },
     secondary: { main: "#000" },
   },
+  typography: {
+    fontFamily: "Arial",
+  },
 });

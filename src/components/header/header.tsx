@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import {
   AppBar,
   Button,
@@ -13,6 +13,10 @@ import useHeaderStyles from "./styles";
 const Header: FC = () => {
   const { root, title } = useHeaderStyles();
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const backgroundTheme = isDarkMode ? "dark" : "light";
+
+  console.log(isDarkMode);
   return (
     <div>
       <AppBar className={root} position="static">
@@ -21,7 +25,12 @@ const Header: FC = () => {
             <Typography className={title} variant="h6">
               Where in the world?
             </Typography>
-            <IconButton edge="start" color="inherit" aria-label="menu">
+            <IconButton
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+            >
               <DarkModeIcon />
             </IconButton>
           </Grid>
